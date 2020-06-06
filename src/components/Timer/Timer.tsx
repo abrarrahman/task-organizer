@@ -140,8 +140,7 @@ const Timer = (props: TimerProps) => {
       </div>
       <TimerChart tasks={selectedTasks} />
       <div id='timerNotificationsContainer'>
-        <TransitionGroup
-          transitionName="example">
+        <TransitionGroup>
           {
             activeNotifications.map(notification => (
               <CSSTransition
