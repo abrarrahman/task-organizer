@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useSelector, useDispatch } from 'react-redux';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import './Timer.css';
 import { MdPlayArrow, MdPause, MdReplay } from 'react-icons/md';
@@ -66,7 +67,7 @@ const Timer = (props: TimerProps) => {
       type: 'DISMISS_NOTIFICATION',
       id: id
     })
-  },[dispatch])
+  }, [dispatch])
   useEffect(() => {
     timerNotifications.forEach(notification => {
       if (timer.time === notification.time && timer.isRunning) {
@@ -139,15 +140,23 @@ const Timer = (props: TimerProps) => {
       </div>
       <TimerChart tasks={selectedTasks} />
       <div id='timerNotificationsContainer'>
-        {
-          activeNotifications.map(notification => {
-            return <TimerNotification
-              key={notification.id}
-              message={notification.message}
-              onDismiss={()=>dismissNotification(notification.id)}
-            />
-          })
-        }
+        <TransitionGroup
+          transitionName="example">
+          {
+            activeNotifications.map(notification => (
+              <CSSTransition
+                key={notification.id}
+                classNames="example"
+                timeout={{ enter: 300, exit: 300 }}
+              >
+                <TimerNotification
+                  message={notification.message}
+                  onDismiss={() => dismissNotification(notification.id)}
+                />
+              </CSSTransition>
+            ))
+          }
+        </TransitionGroup>
       </div>
     </div>
   )
