@@ -1,0 +1,29 @@
+#tasksTableContainer {
+  margin: auto;
+  width : 90%;
+  height: 400px;
+}
+.taskButton{
+  margin-right: 10px;
+  border: none;
+  background-color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 5px;
+}
+.taskButton:hover{
+  color: blue;
+}
+table {
+  border: 1px solid black;
+  width: 100%;
+}
+th{
+  background-color: #ccc;
+}
+tr:nth-child(2n+1){
+  background-color: whitesmoke;
+}
+tr:nth-child(2n){
+  background-color: white;
+}

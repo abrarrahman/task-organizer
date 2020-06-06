@@ -1,0 +1,48 @@
+.timerChartContainer {
+  justify-content: center;
+  display        : flex;
+  flex-direction : row;
+  position       : relative;
+}
+
+.timerChartSecondsContainer {
+  width     : 20%;
+  align-self: flex-end;
+}
+
+.timerChartSecondsContainer div {
+  height      : 60px;
+  padding-left: 10px;
+}
+
+.timerChartSectionsContainer {
+  margin-top: 10px;
+  width     : 80%;
+}
+
+#chartLineContainer {
+  display : flex;
+  position: absolute;
+  left    : 0%;
+  top     : 0%;
+  width   : 100%;
+  height  : 100%;
+}
+
+#chartLine {
+  position  : absolute;
+  left      : 24%;
+  width     : 55.8%;
+  height    : 0px;
+  border    : 1px solid red;
+  z-index   : 500;
+  margin-top: 10px;
+}
+
+#chartLineText {
+  position   : absolute;
+  color      : red;
+  font-weight: bold;
+  left       : 81%;
+  margin     : 0px;
+}

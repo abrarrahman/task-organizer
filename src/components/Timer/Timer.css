@@ -1,0 +1,36 @@
+#timerContainer {
+  width     : 100%;
+  height    : 100%;
+  padding   : 30px;
+  box-sizing: border-box;
+}
+
+#timerHeader {
+  display        : flex;
+  align-items    : center;
+  justify-content: space-around;
+  padding        : 0px 30px;
+}
+
+.timerButtons {
+  padding     : 2px;
+  height      : 40px;
+  width       : 40px;
+  border-color: #ccc;
+}
+#timerDisplayContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#timerText{
+  margin: 0;
+}
+#timerTime{
+  margin: 0;
+}
+#timerNotificationsContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

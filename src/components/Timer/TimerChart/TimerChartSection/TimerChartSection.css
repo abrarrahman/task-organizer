@@ -1,0 +1,14 @@
+.chartSection {
+  width           : 70%;
+  border          : 1px solid black;
+  box-sizing      : border-box;
+}
+
+.chartTaskName {
+  width        : 30%;
+  text-align   : end;
+  padding-right: 30px;
+  box-sizing   : border-box;
+  height: 0px;
+  line-height: 1em;
+}
