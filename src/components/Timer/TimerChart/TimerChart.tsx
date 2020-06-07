@@ -19,6 +19,14 @@ const TimerChart = (props: TimerChartProps) => {
 
   return (
     <div className="timerChartContainer">
+      <div id='timerChartGrid'>
+        <div className='timerChartGridSection'></div>
+        <div className='timerChartGridSection'></div>
+        <div className='timerChartGridSection'></div>
+        <div className='timerChartGridSection'></div>
+        <div className='timerChartGridSection'></div>
+        <div className='timerChartGridSection'></div>
+      </div>
       <div id='chartLineContainer'>
         <div style={{top: time * 6 }} id='chartLine'></div>
         <p style={{top: time * 6 }} id='chartLineText'>Current Time</p>
