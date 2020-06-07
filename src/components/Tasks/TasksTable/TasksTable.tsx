@@ -5,8 +5,8 @@ import Task from '../../../models/Task';
 
 export interface TasksTableProps {
   tasks: Task[],
-  onEdit: (id: number) => void,
-  onDelete: (id: number) => void,
+  onEdit: (id:number)=>void,
+  onDelete: (id:number)=>void,
 }
 interface TaskActionProps {
   onClickEdit: React.MouseEventHandler,
@@ -15,17 +15,15 @@ interface TaskActionProps {
 const TaskAction = (props: TaskActionProps) => {
   return (
     <td>
-      <div style={{ display: 'flex' }}>
-        <div className='taskButton' onClick={props.onClickEdit}>Edit</div>
-        <div className='taskButton' onClick={props.onClickDelete}>Delete</div>
-      </div>
+      <button className='taskButton' onClick={props.onClickEdit}>Edit</button>
+      <button className='taskButton' onClick={props.onClickDelete}>Delete</button>
     </td>
   )
 }
 interface TaskEntryProps {
   task: Task,
-  onEdit: (id: number) => void,
-  onDelete: (id: number) => void,
+  onEdit: (id: number)=>void,
+  onDelete: (id: number)=>void,
 }
 const TaskEntry = (props: TaskEntryProps) => {
   return (
@@ -33,7 +31,7 @@ const TaskEntry = (props: TaskEntryProps) => {
       <td>{props.task.name}</td>
       <td>{props.task.duration} seconds</td>
       <TaskAction
-        onClickEdit={() => props.onEdit(props.task.id)}
+        onClickEdit={()=> props.onEdit(props.task.id)}
         onClickDelete={() => props.onDelete(props.task.id)}
       />
     </tr>
@@ -44,16 +42,16 @@ const TasksTable = (props: TasksTableProps) => (
     <table>
       <thead>
         <tr style={{ textAlign: 'left' }}>
-          <th style={{ width: '40%' }}>Task Name</th>
-          <th style={{ width: '30%' }}>Task Duration</th>
-          <th style={{ width: '30%' }}>Actions</th>
+          <th style={{width: '40%'}}>Task Name</th>
+          <th style={{width: '30%'}}>Task Duration</th>
+          <th style={{width: '30%'}}>Actions</th>
         </tr>
       </thead>
       <tbody>
         {
           props.tasks.map(task => {
             return (
-              <TaskEntry key={task.id} task={task} onEdit={props.onEdit} onDelete={props.onDelete} />
+              <TaskEntry key={task.id} task={task} onEdit={props.onEdit} onDelete={props.onDelete}/>
             )
           })
         }

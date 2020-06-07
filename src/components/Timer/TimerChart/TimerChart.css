@@ -16,7 +16,6 @@
 }
 
 .timerChartSectionsContainer {
-  z-index   : 100;
   margin-top: 10px;
   width     : 80%;
 }
@@ -46,24 +45,4 @@
   font-weight: bold;
   left       : 81%;
   margin     : 0px;
-}
-
-#timerChartGrid {
-  margin-top: 10px;
-  position  : absolute;
-  left      : 24%;
-  width     : 56%;
-  height    : 100%;
-  z-index   : 0;
-}
-
-.timerChartGridSection {
-  width     : 100%;
-  border    : 1px solid #aaa;
-  border-top: none;
-  height    : 60px;
-  box-sizing: border-box;
-}
-.timerChartGridSection:first-of-type{
-  border-top: 1px solid #aaa;
 }
